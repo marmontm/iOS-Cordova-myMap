@@ -1,11 +1,11 @@
 var mapService = {
-    btnDisplayMap: null,
+    btnSearch: null,
     map: null,
 
     // Object constructor
     initialize: function () {
-        this.btnDisplayMap = document.getElementById("display-map");
-        this.btnDisplayMap.addEventListener("click", this.initMap);
+        this.btnSearch = document.getElementById("btn-search");
+        this.btnSearch.addEventListener("click", this.initMap);
     },
 
     initMap: function () {
