@@ -40,7 +40,7 @@ a {
 button {
     /* Box */
     background-color: #1f68dd;
-    margin: 10px 10px; /* vert, horiz */
+    margin: 10px 5px; /* vert, horiz */
     padding: 8px 16px;
     border-radius: 7px;
     border: transparent !important;
@@ -69,6 +69,7 @@ button:hover {
     margin: 10px 10px; /* vert, horiz */
     padding: 8px 0;
     background: transparent;
+    width: 280px;
 
     /* Border */
     border-top: transparent !important;
@@ -93,6 +94,7 @@ button:hover {
 }
 
 .app {
+    position: absolute;
     width: 100%;
     height: 100%;
 }
@@ -131,13 +133,19 @@ h2 {
 }
 
 .info {
-    padding: 0 10px;
-    margin-bottom: 8pt;
+    margin: 8pt 0;
 }
 
-.info-line {
-    display: block;
-    margin-bottom: 4pt;
+.info td {
+    padding: 2pt 4pt;
+}
+
+.info-var {
+    color: #1f68dd;
+}
+
+.info-error {
+    color: #cb4141;
 }
 
 #map {

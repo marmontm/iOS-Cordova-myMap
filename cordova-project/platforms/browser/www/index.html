@@ -39,21 +39,32 @@
 
         <title>myMap - maxmrmt</title>
     </head>
-    <body>
+    <body onload="initialize()">
         <div class="app">
             <h1>myMap</h1>
 
             <!--User input-->
             <h2>Enter location:</h2>
-            <input type="text" class="input-text" id="tb-search" placeholder="Enter address...">
+            <input type="text" class="input-text" id="tb-search" placeholder="'Paris' or '48.856, 2.352'...">
             <button id="btn-search">Search</button>
+            <button id="btn-locateme">Locate me</button>
 
             <!--Map service response-->
             <p class="section-title">Information about location</p>
-            <div class="info">
-                <p class="info-line" id="info-lat">Latitude: </p>
-                <p class="info-line" id="info-lng">Longitude: </p>
-            </div>
+            <table class="info">
+                <tr>
+                    <td>Result: </td>
+                    <td class="info-var" id="info-res"></td>
+                </tr>
+                <tr>
+                    <td>Latitude: </td>
+                    <td class="info-var" id="info-lat"></td>
+                </tr>
+                <tr>
+                    <td>Longitude: </td>
+                    <td class="info-var" id="info-lng"></td>
+                </tr>
+            </table>
             <div id="map"></div>
         </div>
 
