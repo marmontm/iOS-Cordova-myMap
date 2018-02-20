@@ -9,6 +9,7 @@
 /* Variables */
 
 var btnSearch = document.getElementById("btn-search");
+var btnLocateMe = document.getElementById("btn-locateme");
 var tbInput = document.getElementById("tb-search");
 var lblRes = document.getElementById("info-res");
 var lblLat = document.getElementById("info-lat");
@@ -22,7 +23,8 @@ var markers = [];
 /* Events listener */
 
 tbInput.addEventListener("keyup", enterKeyPressed);
-btnSearch.addEventListener("click", codeAddress);
+btnSearch.addEventListener("click", btnSearchPressed);
+btnLocateMe.addEventListener("click", btnLocateMePressed);
 
 
 /* Functions */
@@ -34,6 +36,43 @@ function enterKeyPressed(ev) {
     }
 }
 
+function btnSearchPressed (ev){
+    var source = document.getElementById('tb-search').value;
+    codeAddress(source);
+}
+
+function btnLocateMePressed (ev){
+    navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+    displayWarn("Waiting for current position...");
+}
+
+// onSuccess Callback
+// This method accepts a Position object, which contains the
+// current GPS coordinates
+//
+// From [ https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/ ]
+//
+var onGpsSuccess = function(position) {
+    // alert(
+    //     'Latitude: '          + position.coords.latitude          + '\n' +
+    //     'Longitude: '         + position.coords.longitude         + '\n' +
+    //     'Altitude: '          + position.coords.altitude          + '\n' +
+    //     'Accuracy: '          + position.coords.accuracy          + '\n' +
+    //     'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+    //     'Heading: '           + position.coords.heading           + '\n' +
+    //     'Speed: '             + position.coords.speed             + '\n' +
+    //     'Timestamp: '         + position.timestamp                + '\n');
+    codeAddress(position.coords.latitude + ", " + position.coords.longitude);
+};
+
+// onError Callback receives a PositionError object
+//
+function onGpsError(error) {
+    deleteMarkers();
+    displayWarn('An error as occured: ' + error.message + ' [Code: ' + error.code + '] ' );
+}
+
+
 function displayInfo (res, lat, lng) {
     lblRes.className = "info-var";
     lblRes.innerHTML = res;
@@ -41,7 +80,7 @@ function displayInfo (res, lat, lng) {
     lblLng.innerHTML = lng;
 }
 
-function displayError (msg) {
+function displayWarn (msg) {
     lblRes.className = "info-error";
     lblRes.innerHTML = msg;
     lblLat.innerHTML = "";
@@ -59,8 +98,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 }
 
-function codeAddress() {
-    var address = document.getElementById('tb-search').value;
+function codeAddress(address) {
     if (address != "") {
         geocoder.geocode( { 'address': address}, function(results, status) {
             if (status == 'OK') {
@@ -72,7 +110,7 @@ function codeAddress() {
                 displayInfo(results[0].formatted_address,location.lat(), location.lng());
             } else {
                 deleteMarkers();
-                displayError("An error as occured: " + status);
+                displayWarn("An error as occured: " + status);
             }
         });
     }

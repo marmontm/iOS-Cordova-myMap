@@ -67,7 +67,7 @@ button:hover {
 
     /* Box */
     margin: 10px 10px; /* vert, horiz */
-    padding: 8px 0;
+    padding: 8px 4pt;
     background: transparent;
     width: 280px;
 
@@ -94,7 +94,7 @@ button:hover {
 }
 
 .app {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
