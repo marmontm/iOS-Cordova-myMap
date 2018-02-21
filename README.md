@@ -5,6 +5,11 @@
 
 This implementation uses MVC model and Google Maps Javascript API.
 
+> **IMPORTANT NOTE:**  
+> This code is provided without Google Map API key.  
+> So you have to go to Google API Console to get yours and add it in this line `<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&language=en"></script>` written in the main html file : `cordova-project/www/index.html`.  
+> Replace 'YOUR_API_KEY_HERE' by yours.
+
 Also, code was inspired from some templates you can find on the web:  
 - Display a map, *Google Developers*  
 https://developers.google.com/maps/documentation/javascript/geocoding?hl=en
