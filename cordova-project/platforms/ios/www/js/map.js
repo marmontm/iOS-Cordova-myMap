@@ -43,7 +43,7 @@ function btnSearchPressed (ev){
 
 function btnLocateMePressed (ev){
     navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
-    displayError("Waiting for current position...");
+    displayWarn("Waiting for current position...");
 }
 
 // onSuccess Callback
@@ -69,7 +69,7 @@ var onGpsSuccess = function(position) {
 //
 function onGpsError(error) {
     deleteMarkers();
-    displayError('An error as occured: ' + error.message + ' [Code: ' + error.code + '] ' );
+    displayWarn('An error as occured: ' + error.message + ' [Code: ' + error.code + ']');
 }
 
 
@@ -80,8 +80,8 @@ function displayInfo (res, lat, lng) {
     lblLng.innerHTML = lng;
 }
 
-function displayError (msg) {
-    lblRes.className = "info-error";
+function displayWarn (msg) {
+    lblRes.className = "info-warn";
     lblRes.innerHTML = msg;
     lblLat.innerHTML = "";
     lblLng.innerHTML = "";
@@ -110,7 +110,7 @@ function codeAddress(address) {
                 displayInfo(results[0].formatted_address,location.lat(), location.lng());
             } else {
                 deleteMarkers();
-                displayError("An error as occured: " + status);
+                displayWarn("An error as occured: " + status);
             }
         });
     }

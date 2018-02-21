@@ -69,7 +69,7 @@ var onGpsSuccess = function(position) {
 //
 function onGpsError(error) {
     deleteMarkers();
-    displayWarn('An error as occured: ' + error.message + ' [Code: ' + error.code + '] ' );
+    displayWarn('An error as occured: ' + error.message + ' [Code: ' + error.code + ']');
 }
 
 
@@ -81,7 +81,7 @@ function displayInfo (res, lat, lng) {
 }
 
 function displayWarn (msg) {
-    lblRes.className = "info-error";
+    lblRes.className = "info-warn";
     lblRes.innerHTML = msg;
     lblLat.innerHTML = "";
     lblLng.innerHTML = "";

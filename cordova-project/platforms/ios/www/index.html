@@ -39,15 +39,17 @@
 
         <title>myMap - maxmrmt</title>
     </head>
-    <body onload="initialize()">
+    <body>
         <div class="app">
             <h1>myMap</h1>
 
             <!--User input-->
             <h2>Enter location:</h2>
-            <input type="text" class="input-text" id="tb-search" placeholder="'Paris' or '48.856, 2.352' ...">
-            <button id="btn-search">Search</button>
-            <button id="btn-locateme">Locate me</button>
+            <div class="form">
+                <input type="text" class="input-text" id="tb-search" placeholder="'Paris' or '48.856, 2.352' ...">
+                <button id="btn-search">Search</button>
+                <button id="btn-locateme">Locate me</button>
+            </div>
 
             <!--Map service response-->
             <p class="section-title">Information about this location</p>
@@ -70,11 +72,10 @@
 
         <!--scripts-->
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/mapModel.js"></script>
+        <script type="text/javascript" src="js/mapView.js"></script>
+        <script type="text/javascript" src="js/mapController.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNqm9ZSYQeJu8MX5G8DTl7g7whnrBXqBY&language=en"></script>
         <script type="text/javascript" src="js/index.js"></script>
-
-        <!--my scripts-->
-        <script type="text/javascript" src="js/map.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNqm9ZSYQeJu8MX5G8DTl7g7whnrBXqBY"
-                async defer></script>
     </body>
 </html>

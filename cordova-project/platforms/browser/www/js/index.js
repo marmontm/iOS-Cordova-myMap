@@ -37,3 +37,6 @@ var app = {
 };
 
 app.initialize();
+mapModel.initialize();
+mapView.initialize();
+mapController.initialize();
