@@ -6,16 +6,16 @@
 This implementation uses MVC model and Google Maps Javascript API.
 
 Also, code was inspired from some templates you can find on the web:  
-- Display a map, *Google Developers*
+- Display a map, *Google Developers*  
 https://developers.google.com/maps/documentation/javascript/geocoding?hl=en
   
-- Markers management, *Google Developers*
+- Markers management, *Google Developers*  
 https://developers.google.com/maps/documentation/javascript/examples/marker-remove?hl=en
   
-- Cordova get GPS location, *Apache Cordova*
+- Cordova get GPS location, *Apache Cordova*  
 https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/
   
-- Allow the app to geolocate the devices on iOS, *Apple Developer*
+- Allow the app to geolocate the devices on iOS, *Apple Developer*  
 https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html
   
 Cross-platform application done with Apache Cordova (build and frameworks) and Apple Xcode (build app for iOS). 
