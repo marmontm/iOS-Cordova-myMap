@@ -1,20 +1,25 @@
-# iOS-Cordova-Camera-using
-**SnapMe** is a very small mobile application where you can us Camera plugin in Cordova for iOS Development.
+# iOS-Cordova-myMap
+**MapsMe** is a small mobile application which use Google Maps Services to display on a map:
+- Current location of the device
+- Address or coordinates specified by the user
+
+This implementation uses MVC model and Google Maps Javascript API.
+
+Also, code was inspired from some templates you can find on the web:  
+- Display a map, *Google Developers*
+https://developers.google.com/maps/documentation/javascript/geocoding?hl=en
   
-## Features
-With this application, you are able to choose a picture from one of these sources:
-1. **Take a picture** with the built-in camera on your iPhone
-2. **Import a picture** from your photo library
+- Markers management, *Google Developers*
+https://developers.google.com/maps/documentation/javascript/examples/marker-remove?hl=en
   
-And then display it.  
+- Cordova get GPS location, *Apache Cordova*
+https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/
   
+- Allow the app to geolocate the devices on iOS, *Apple Developer*
+https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html
   
-## How to use ?
-1. Install Cordova on your computer (only if you don't have already installed it)
-2. Open Xcode project workspace located in `/cordova-project/platforms/ios/`
-3. The source code from the displayed HTML page is located in the `www` folder inside the iOS project. Home is `index.html`
-  
-  
+Cross-platform application done with Apache Cordova (build and frameworks) and Apple Xcode (build app for iOS). 
+
 > **Note:** iOS Development with Xcode is available on macOS only.    
 >  
 > More information :    
@@ -22,4 +27,4 @@ And then display it.
 > https://cordova.apache.org/   
   
   
-January 2018, Maxime MARMONT
+February 2018, Maxime MARMONT
